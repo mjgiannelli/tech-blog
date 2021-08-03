@@ -49,5 +49,28 @@ router.get('/:id', (req, res) => {
         });
 });
 
+//PUT /api/users/1
+router.put('/:id', (req, res) => {
+
+    // if req.body has exact ket/value pairs to match the model, you can just use `req.body` instead
+    User.update(req.body, {
+        //pass in req.body instead to only update what's passed through
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbUserData => {
+            if (!dbUserData[0]) {
+                res.status(404).json({ message: 'No user found with this id' });
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+});
 
 module.exports = router;
