@@ -79,4 +79,27 @@ router.post('/', (req, res) => {
         });
 });
 
+// update post title or content
+router.put('/:id', (req, res) => {
+    Post.update(req.body, {
+        //pass in req.body instead to only update what's passed through
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' })
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;
