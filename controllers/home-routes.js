@@ -40,7 +40,7 @@ router.get('/login', (req, res) => {
 });
 
 // create route for the sign up page
-router.get('/login', (req, res) => {
+router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
