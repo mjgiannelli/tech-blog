@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 
 router.get('/', (req, res) => {
+    console.log(req.session);
+
     Post.findAll({
         attributes: [
             'id',
@@ -36,6 +38,12 @@ router.get('/', (req, res) => {
 
 // create route for the login page
 router.get('/login', (req, res) => {
+    console.log(req.session.loggedIn)
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
     res.render('login');
 });
 

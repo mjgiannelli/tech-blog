@@ -5,7 +5,23 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
+const session = require('express-session');
 
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+    secret: process.env.secret,
+    cookie: {},
+    resave: false,
+    saveUnitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
+
+app.use(session(sess));
+
+//creates the handlebar engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
