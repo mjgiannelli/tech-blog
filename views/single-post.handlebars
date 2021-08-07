@@ -1,0 +1,29 @@
+<ol>
+    <li>
+        <article>
+            <div>
+                <h2>{{post.title}}</h2>
+                <span>Posted by {{post.user.username}} on {{post.created_at}}</span>
+            </div>
+            <div>
+                <p>{{post.post_content}}</p>
+            </div>
+        </article>
+    </li>
+</ol>
+<div>
+    {{#each post.comments}}
+    <section>
+        <div>
+            {{user.username}} on {{created_at}}
+        </div>
+        <div>
+            {{comment_text}}
+        </div>
+    </section>
+    {{/each}}
+</div>
+<form id='comment-form'>
+    <label for='new-comment'>Comment</label>
+    <textarea name='new-comment' form='comment-form'>Enter comment here...</textarea>
+</form>
