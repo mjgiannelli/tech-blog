@@ -39,4 +39,9 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// create route for the sign up page
+router.get('/login', (req, res) => {
+    res.render('signup');
+});
+
 module.exports = router;
