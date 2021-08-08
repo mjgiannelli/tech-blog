@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Post.findAll({
         //use id from session
         where: {
@@ -40,7 +41,7 @@ router.get('/', (req, res) => {
 });
 
 // create route for new post page
-router.get('/newpost', (req, res) => {
+router.get('/newpost', withAuth, (req, res) => {
     res.render('new-post', { loggedIn: true });
 })
 
