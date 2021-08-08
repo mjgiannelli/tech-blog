@@ -39,4 +39,9 @@ router.get('/', (req, res) => {
         });
 });
 
+// create route for new post page
+router.get('/newpost', (req, res) => {
+    res.render('new-post', { loggedIn: true });
+})
+
 module.exports = router;
