@@ -96,12 +96,14 @@ router.post('/login', (req, res) => {
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
 
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
+            console.log(dbUserData)
+
+            return res.json({ user: dbUserData, message: 'You are now logged in!' });
         })
     });
 });
 
-//create a log out route for user
+//create a logout route for user
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {

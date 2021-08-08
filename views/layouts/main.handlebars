@@ -12,14 +12,14 @@
     <div class="wrapper">
         <header>
             <nav>
-                {{#if loggedIn}}
+                {{!-- {{#if loggedIn}} --}}
                 <a href="/">Home</a>
                 <a href='/dashboard'>dashboard</a>
                 <button id='logout'>Logout</button>
-                {{else}}
+                {{!-- {{else}} --}}
                 <a href="/">Home</a>
                 <a href='/login'>Login</a>
-                {{/if}}
+                {{!-- {{/if}} --}}
             </nav>
             <h1>
                 <a href="/">Tech Blog</a>
@@ -32,7 +32,9 @@
             Thanks for visiting!
         </footer>
     </div>
+    {{!-- {{#if loggedIn}} --}}
     <script src="/javascript/logout.js"></script>
+    {{!-- {{/if}} --}}
 </body>
 
 </html>
