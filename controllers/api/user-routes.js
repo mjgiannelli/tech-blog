@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require("../../models");
-const withAuth = require('../../utils/auth');
 
 // get users
 router.get('/', (req, res) => {
@@ -117,7 +116,7 @@ router.post('/logout', (req, res) => {
 });
 
 //PUT /api/users/1
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
 
     // if req.body has exact ket/value pairs to match the model, you can just use `req.body` instead
     User.update(req.body, {
@@ -141,7 +140,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 //DELETE /api/users/1
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
             id: req.params.id

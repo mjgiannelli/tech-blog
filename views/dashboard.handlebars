@@ -12,11 +12,12 @@
                     <p>{{post.post_content}}</p>
                 </div>
             </article>
+            <a href="/dashboard/edit/{{post.post.id}}">Edit post</a>
         </li>
         {{/each}}
     </ol>
 </section>
-<a href='/dashboard/newpost'><button type='button' id='post-btn'>+ New Post</button></a>
+<button type='submit'>+ New Post</button>
 {{else}}
-<a href='/dashboard/newpost'><button type='button' id='post-btn'>+ New Post</button></a>
+<button type='submit'>+ New Post</button>
 {{/if}}
