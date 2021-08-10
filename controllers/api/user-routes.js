@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require("../../models");
-const withAuth = require('../../utils/auth');
 
 // get users
 router.get('/', (req, res) => {
@@ -72,7 +71,7 @@ router.post('/', (req, res) => {
 })
 
 //create login route for user
-router.post('/login', withAuth, (req, res) => {
+router.post('/login', (req, res) => {
     User.findOne({
         where: {
             username: req.body.username
@@ -97,8 +96,6 @@ router.post('/login', withAuth, (req, res) => {
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
 
-            console.log(dbUserData)
-
             return res.json({ user: dbUserData, message: 'You are now logged in!' });
         })
     });
@@ -117,7 +114,7 @@ router.post('/logout', (req, res) => {
 });
 
 //PUT /api/users/1
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
 
     // if req.body has exact ket/value pairs to match the model, you can just use `req.body` instead
     User.update(req.body, {
@@ -128,7 +125,7 @@ router.put('/:id', withAuth, (req, res) => {
         }
     })
         .then(dbUserData => {
-            if (!dbUserData[0]) {
+            if (!dbUserData) {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
@@ -141,7 +138,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 //DELETE /api/users/1
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
             id: req.params.id

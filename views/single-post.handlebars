@@ -23,7 +23,13 @@
     </section>
     {{/each}}
 </div>
+{{!-- {{#if loggedIn}} --}}
 <form id='comment-form'>
     <label for='new-comment'>Comment</label>
-    <textarea name='new-comment' form='comment-form'>Enter comment here...</textarea>
+    <textarea name='new-comment' id='new-comment' form='comment-form'>Enter comment here...</textarea>
+    <div>
+        <button type='submit'>Submit</button>
+    </div>
 </form>
+<script src="/javascript/add-comment.js"></script>
+{{!-- {{/if}} --}}
