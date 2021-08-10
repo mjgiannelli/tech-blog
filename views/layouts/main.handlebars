@@ -9,29 +9,29 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <nav>
+    <header>
+        <div class='box'>
+            <nav class='row'>
                 {{!-- {{#if loggedIn}} --}}
-                <a href="/">Home</a>
+                {{!-- <a href="/">Home</a>
                 <a href='/dashboard'>Dashboard</a>
-                <button id='logout'>Logout</button>
+                <button id='logout'>Logout</button> --}}
                 {{!-- {{else}} --}}
-                <a href="/">Home</a>
-                <a href='/login'>Login</a>
+                <a class='col-1' href="/">Home</a>
+                <a class='col-1' href='/login'>Login</a>
                 {{!-- {{/if}} --}}
             </nav>
-            <h1>
-                <a href="/">Tech Blog</a>
-            </h1>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            Thanks for visiting!
-        </footer>
-    </div>
+            <div id='header-title' class='row'>
+                <a href="/">The Tech Blog</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer>
+        Thanks for visiting!
+    </footer>
     {{!-- {{#if loggedIn}} --}}
     <script src="/javascript/logout.js"></script>
     {{!-- {{/if}} --}}

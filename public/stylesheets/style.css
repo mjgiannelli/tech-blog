@@ -185,7 +185,41 @@
 
   /* // Extra small devices (portrait phones, less than 576px) */
 @media (min-width: 0px) {
-    
+
+    header nav {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .col-1 {
+        width: 30%;
+    }
+
+    header {
+        background-color: var(--secondary-color);
+        padding: 2rem 2rem 2.5rem 2rem;
+    }
+
+    header nav a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    #header-title {
+        background-color: var(--primary-color);
+        box-shadow: 0.5rem 0.5rem var(--tertiary-color);
+        border-radius: 1rem;
+    }
+
+    #header-title a {
+        text-decoration: none;
+        color: var(--secondary-color);
+        width: 80%;
+        margin: 0 auto;
+        font-size: 4rem;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
