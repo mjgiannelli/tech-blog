@@ -307,6 +307,14 @@
       margin-top: 1rem;
   }
 
+    #post-btn {
+      font-size: 2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+
 }
 
 /* // Small devices (landscape phones, 576px and up) */
