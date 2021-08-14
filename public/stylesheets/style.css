@@ -187,7 +187,7 @@
 @media (min-width: 0px) {
 
     header nav {
-        justify-content: center;
+        justify-content: space-between;
         text-align: center;
     }
 
@@ -220,6 +220,23 @@
         margin: 0 auto;
         font-size: 4rem;
     }
+
+    #logout-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: 2rem;
+      transition: color .1s;
+      margin-bottom: 1rem;
+    }
+
+    #home {
+      width: 5rem;
+    }
+
 }
 
 /* // Small devices (landscape phones, 576px and up) */

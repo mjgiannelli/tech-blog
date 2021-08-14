@@ -9,6 +9,7 @@ const session = require('express-session');
 require('dotenv').config();
 const path = require('path');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+var morgan = require('morgan')
 
 const sess = {
     secret: process.env.secret,
@@ -31,6 +32,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan('tiny'))
 
 // turn on routes
 app.use(routes);
