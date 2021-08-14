@@ -1,13 +1,19 @@
 <ol>
     {{#each posts }}
-    <li>
-        <article>
-            <div>
-                <a href='/post/{{id}}'>{{title}}</a>
-                <span>Posted by {{user.username}} on {{created_at}}</span>
+    <li class='row border'>
+        <article class='col-1'>
+            <div id='blog-header' class='row'>
+                <div class='col-1'>
+                    <a href='/post/{{id}}'>{{title}}</a>
+                </div>
+                <div class="col-1">
+                    <span>Posted by {{user.username}} on {{created_at}}</span>
+                </div>
             </div>
-            <div>
-                <p>{{post_content}}</p>
+            <div id='blog-content' class='row'>
+                <div class="col-10">
+                    <p>{{post_content}}</p>
+                </div>
             </div>
         </article>
     </li>

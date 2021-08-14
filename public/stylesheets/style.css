@@ -72,7 +72,7 @@
   }
   
   .border {
-    border: solid .1rem black;
+    border: solid 1rem var(--secondary-color);
   }
   
   h1 {
@@ -185,14 +185,25 @@
 
   /* // Extra small devices (portrait phones, less than 576px) */
 @media (min-width: 0px) {
+    body {
+      background-color: var(--primary-color);
+    }
+
+    a {
+      text-decoration: none;
+    }
 
     header nav {
         justify-content: space-between;
         text-align: center;
     }
 
+    .row {
+      text-align: center;
+    }
+
     .col-1 {
-        width: 30%;
+        width: 100%;
     }
 
     header {
@@ -236,6 +247,40 @@
     #home {
       width: 5rem;
     }
+
+    li {
+      margin: 1rem 0;
+    }
+
+    #blog-header {
+      background-color: var(--secondary-color);
+    }
+
+    #blog-header div{
+      width: 100%;
+      padding: 1rem;
+    }
+
+    #blog-header a {
+      color: var(--primary-color);
+      font-size: 3rem;
+    }
+
+    #blog-header span {
+      color: var(--primary-color);
+      font-size: 2rem;
+    }
+
+    #blog-content {
+      background-color: var(--primary-color);
+    }
+
+    #blog-content p {
+      color: var(--secondary-color);
+      padding: 1rem;
+    }
+
+    
 
 }
 
