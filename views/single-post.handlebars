@@ -19,7 +19,7 @@
 </ol>
 <div class='row border'>
     <div class="col-1">
-            {{#each post.comments}}
+        {{#each post.comments}}
         <section id='comments' class="row">
             <div class='col-10'>
                 <p>{{comment_text}}</p>
@@ -32,13 +32,20 @@
     </div>
 </div>
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 <form id='comment-form'>
-    <label for='new-comment'>Comment</label>
-    <textarea name='new-comment' id='new-comment' form='comment-form'>Enter comment here...</textarea>
-    <div>
-        <button type='submit'>Submit</button>
+    <div id='comment-form-div' class="row border">
+        <div class="col-10">
+            <label for='new-comment'>Comment</label>
+        </div>
+        <div class="col-10">
+            <textarea placeholder='Enter comment here...' name='new-comment' id='new-comment'
+                form='comment-form'></textarea>
+        </div>
+        <div class="col-10">
+            <button id='submit-button' type='submit'>Submit</button>
+        </div>
     </div>
 </form>
 <script src="/javascript/add-comment.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}
