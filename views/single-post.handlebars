@@ -1,35 +1,51 @@
 <ol>
-    <li>
-        <article>
-            <div>
-                <h2>{{post.title}}</h2>
-                <span>Posted by {{post.user.username}} on {{post.created_at}}</span>
+    <li class='row border'>
+        <article class='col-10'>
+            <div id='blog-header' class='row'>
+                <div class='col-1'>
+                    <h2>{{post.title}}</h2>
+                </div>
+                <div class="col-1">
+                    <span>Posted by {{post.user.username}} on {{post.created_at}}</span>
+                </div>
             </div>
-            <div>
-                <p>{{post.post_content}}</p>
+            <div id='blog-content' class='row'>
+                <div class="col-10">
+                    <p>{{post.post_content}}</p>
+                </div>
             </div>
         </article>
     </li>
 </ol>
-<div>
-    {{#each post.comments}}
-    <section>
-        <div>
-            {{user.username}} on {{created_at}}
-        </div>
-        <div>
-            {{comment_text}}
-        </div>
-    </section>
-    {{/each}}
+<div class='row border'>
+    <div class="col-10">
+        {{#each post.comments}}
+        <section id='comments' class="row">
+            <div class='col-10'>
+                <p>{{comment_text}}</p>
+            </div>
+            <div class='col-10'>
+                <p>-{{user.username}} on {{created_at}}</p>
+            </div>
+        </section>
+        {{/each}}
+    </div>
 </div>
-{{!-- {{#if loggedIn}} --}}
+
+{{#if loggedIn}}
 <form id='comment-form'>
-    <label for='new-comment'>Comment</label>
-    <textarea name='new-comment' id='new-comment' form='comment-form'>Enter comment here...</textarea>
-    <div>
-        <button type='submit'>Submit</button>
+    <div id='comment-form-div' class="row border">
+        <div class="col-10">
+            <label for='new-comment'>Comment</label>
+        </div>
+        <div class="col-10">
+            <textarea placeholder='Enter comment here...' name='new-comment' id='new-comment'
+                form='comment-form'></textarea>
+        </div>
+        <div class="col-10">
+            <button id='submit-button' type='submit'>Submit</button>
+        </div>
     </div>
 </form>
 <script src="/javascript/add-comment.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}

@@ -9,32 +9,31 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <nav>
-                {{!-- {{#if loggedIn}} --}}
-                <a href="/">Home</a>
-                <a href='/dashboard'>Dashboard</a>
-                <button id='logout'>Logout</button>
-                {{!-- {{else}} --}}
-                <a href="/">Home</a>
-                <a href='/login'>Login</a>
-                {{!-- {{/if}} --}}
+    <header>
+        <div class='box'>
+            <nav class='row'>
+                {{#if loggedIn}}
+                <a id='home' class='col-1' href="/">Home</a>
+                <a class='col-1' href='/dashboard'>Dashboard</a>
+                <button class='col-1' id='logout-btn'>Logout</button>
+                {{else}}
+                <a class='col-1' href="/">Home</a>
+                <a class='col-1' href='/login'>Login</a>
+                {{/if}}
             </nav>
-            <h1>
-                <a href="/">Tech Blog</a>
-            </h1>
-        </header>
-        <main>
+            <div id='header-title' class='row'>
+                <a href="/">The Tech Blog</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="box">
             {{{ body }}}
-        </main>
-        <footer>
-            Thanks for visiting!
-        </footer>
-    </div>
-    {{!-- {{#if loggedIn}} --}}
+        </div>
+    </main>
+    {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
-    {{!-- {{/if}} --}}
+    {{/if}}
 </body>
 
 </html>
