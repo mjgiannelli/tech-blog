@@ -6,7 +6,7 @@
                     <h2>{{post.title}}</h2>
                 </div>
                 <div class="col-1">
-                    <span>Posted by {{post.user.username}} on {{post.created_at}}</span>
+                    <span>Posted by {{post.user.username}} on {{format_date post.created_at}}</span>
                 </div>
             </div>
             <div id='blog-content' class='row'>
@@ -25,7 +25,7 @@
                 <p>{{comment_text}}</p>
             </div>
             <div class='col-10'>
-                <p>-{{user.username}} on {{created_at}}</p>
+                <p>-{{user.username}} on {{format_date created_at}}</p>
             </div>
         </section>
         {{/each}}
