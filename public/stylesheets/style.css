@@ -290,24 +290,27 @@
       font-size: 3rem;
     }
 
-    #new-comment, #post-content-input {
+    #new-comment, #post-content-input, #edit-post-content-input {
       width: 100%;
       height: 20rem;
       font-size: 2rem;
       margin: 1rem 0;
     }
 
-    #submit-button, #create-new-post {
+    #submit-button, #create-new-post, #update-post-btn, #delete-post-btn {
       width: 100%;
-      font-size: 2rem;
     }
 
-    #comment-form-div, #new-post-div {
+    #comment-form-div, #new-post-div, #edit-post-div {
       padding: 1rem;
       margin-top: 1rem;
   }
 
-    #post-btn {
+    #post-btn, 
+    #submit-button, 
+    #create-new-post, 
+    #update-post-btn, 
+    #delete-post-btn {
       font-size: 2rem;
       padding: 1rem;
       border-radius: 1rem;
@@ -315,17 +318,21 @@
       color: var(--primary-color);
     }
 
-    #title-input {
+    #title-input, #edit-title-input {
       width: 100%;
       font-size: 2rem;
     }
 
-    #new-post-div {
+    #new-post-div, #edit-post-div {
       margin-top: 0rem;
   }
 
-  #new-post-form {
+  #new-post-form, #edit-post-form {
     margin-top: 1rem;
+  }
+
+  #update-post-btn {
+    margin-bottom: 1rem;
   }
 
 }
