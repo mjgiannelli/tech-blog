@@ -388,12 +388,40 @@
 }
 
 #header-title {
-  width: 60%;
+  width: 25rem;
 }
 
 #header-title a {
   width: 97%;
   margin: 0 auto;
+}
+
+#post-btn {
+  width: 15rem;
+}
+
+#post-btn-div {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#blog-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+#blog-title {
+  width: 80%;
+  text-align: left;
+}
+
+#blog-date {
+  width: 20%;
+  text-align: right;
+}
+
+#blog-header div {
+  width: unset;
 }
 
 }
