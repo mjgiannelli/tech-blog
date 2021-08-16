@@ -15,8 +15,7 @@ async function signupFormHandler(event) {
         });
 
         //check the response status
-        console.log('this is the session after signing up')
-        console.log(response.session);
+        
         if (response.ok) {
 
             document.location.replace('/dashboard/');
