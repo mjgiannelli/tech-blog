@@ -461,6 +461,10 @@ width: 30%;
   margin-left: 4rem;
 }
 
+h2 {
+  padding: 1rem;
+}
+
 }
 
 /* // Medium devices (tablets, 768px and up) */
