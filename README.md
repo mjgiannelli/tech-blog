@@ -29,10 +29,10 @@
 
   To use, go to the following url:
 
-  [Note Taker Deployed Website](https://shrouded-escarpment-97500.herokuapp.com/)
+  [Tech Blog Deployed Website](https://polar-woodland-67241.herokuapp.com/)
   
   Screenshot of Deployed Website
-  ![Screenshot of Deployed Website](public/assets/images/screenshot.png)
+  ![Screenshot of Deployed Website](/public/images/screenshot.png)
    
 
   ## [Contributing](#table-of-contents)
